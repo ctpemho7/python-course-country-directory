@@ -31,6 +31,7 @@ class Renderer:
         return (
             f"Страна: {self.location_info.location.name}",
             f"Столица: {self.location_info.location.capital}",
+            f"Площадь: {await self._format_area()} км²",
             f"Регион: {self.location_info.location.subregion}",
             f"Языки: {await self._format_languages()}",
             f"Население страны: {await self._format_population()} чел.",
@@ -49,6 +50,20 @@ class Renderer:
             f"{item.name} ({item.native_name})"
             for item in self.location_info.location.languages
         )
+
+    async def _format_area(self) -> str:
+        """
+        Форматирование информации о площади.
+
+        :return:
+        """
+
+        # pylint: disable=C0209
+
+        if self.location_info.location.area is None:
+            return "Нет информации о"
+        else:
+            return "{:,.0f}".format(self.location_info.location.area).replace(",", ".")
 
     async def _format_population(self) -> str:
         """

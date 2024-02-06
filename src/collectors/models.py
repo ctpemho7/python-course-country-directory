@@ -1,6 +1,7 @@
 """
 Описание моделей данных (DTO).
 """
+from typing import Optional
 
 from pydantic import Field, BaseModel
 
@@ -104,6 +105,7 @@ class CountryDTO(BaseModel):
     languages: set[LanguagesInfoDTO]
     name: str
     population: int
+    area: Optional[float]
     subregion: str
     timezones: list[str]
 
