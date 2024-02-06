@@ -153,6 +153,7 @@ class WeatherInfoDTO(BaseModel):
     visibility: int
     wind_speed: float
     description: str
+    offset_seconds: int
 
 
 class LocationInfoDTO(BaseModel):

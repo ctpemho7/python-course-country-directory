@@ -2,6 +2,7 @@
 Функции для формирования выходной информации.
 """
 
+import datetime
 from decimal import ROUND_HALF_UP, Decimal
 
 from collectors.models import LocationInfoDTO
@@ -33,18 +34,40 @@ class Renderer:
             f"Столица: {self.location_info.location.capital}",
             f"Широта столицы: {self.location_info.location.capital_latitude}",
             f"Долгота столицы: {self.location_info.location.capital_longitude}",
+            f"Часовой пояс столицы: {await self._get_timezone()}",
             f"Площадь: {await self._format_area()} км²",
             f"Регион: {self.location_info.location.subregion}",
             f"Языки: {await self._format_languages()}",
             f"Население страны: {await self._format_population()} чел.",
             f"Курсы валют: {await self._format_currency_rates()}",
             "-----------------погода в столице---------------------------",
+            f"Сейчас в {self.location_info.location.capital} {await self._format_current_time()}",
             f"Температура: {self.location_info.weather.temp} °C",
             f"Погода: {self.location_info.weather.description}",
             f"Влажность: {self.location_info.weather.humidity}%",
             f"Видимость: {await self._format_visibility()} км",
             f"Скорость ветра: {self.location_info.weather.wind_speed} м/с",
         )
+
+    async def _get_timezone(self) -> str:
+        """
+        Форматирование информации о времени.
+
+        :return:
+        """
+        offset_hours = self.location_info.weather.offset_seconds / 3600.0
+        return "UTC{:+d}:{:02d}".format(int(offset_hours), int((offset_hours % 1) * 60))
+
+    async def _format_current_time(self) -> str:
+        """
+        Форматирование информации о времени.
+
+        :return:
+        """
+        dt = datetime.datetime.now() + datetime.timedelta(
+            seconds=self.location_info.weather.offset_seconds
+        )
+        return dt.strftime("%X, %x")
 
     async def _format_visibility(self) -> str:
         """

@@ -223,6 +223,7 @@ class WeatherCollector(BaseCollector):
                 visibility=result["visibility"],
                 wind_speed=result["wind"]["speed"],
                 description=result["weather"][0]["description"],
+                offset_seconds=result["timezone"],
             )
 
         return None
