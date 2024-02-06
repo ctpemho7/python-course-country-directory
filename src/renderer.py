@@ -4,6 +4,8 @@
 
 import datetime
 from decimal import ROUND_HALF_UP, Decimal
+from textwrap import fill
+from typing import Optional
 
 from prettytable import PrettyTable
 
@@ -34,6 +36,9 @@ class Renderer:
         country_tab = PrettyTable(["Поле", "Значение"], align="l")
         capital_tab = PrettyTable(["Поле", "Значение"], align="l")
         weather_tab = PrettyTable(["Поле", "Значение"], align="l")
+        news_tab = PrettyTable(
+            ["Название", "Автор", "Описание", "Опубликовано", "Ссылка"], align="l"
+        )
 
         # инфо о стране
         country_tab.add_row(["Страна", f"{self.location_info.location.name}"])
@@ -65,7 +70,46 @@ class Renderer:
             ["Скорость ветра", f"{self.location_info.weather.wind_speed} м/с"]
         )
 
-        return country_tab, capital_tab, weather_tab
+        # Новости
+        for news_entry in self.location_info.news:
+            news_tab.add_row(
+                [
+                    fill(news_entry.title, width=50),
+                    news_entry.author,
+                    fill(
+                        await self._format_description(news_entry.description), width=50
+                    ),
+                    fill(
+                        await self._format_publication_date(news_entry.publishedAt),
+                        width=10,
+                    ),
+                    fill(news_entry.url, width=50),
+                ]
+            )
+
+        return country_tab, capital_tab, weather_tab, news_tab
+
+    async def _format_publication_date(self, date: str) -> str:
+        """
+        Форматирование описания новости.
+
+        :return:
+        """
+        render_time = datetime.datetime.strptime(
+            date, "%Y-%m-%dT%H:%M:%SZ"
+        ) + datetime.timedelta(seconds=self.location_info.weather.offset_seconds)
+        return render_time.strftime("%X, %x")
+
+    @staticmethod
+    async def _format_description(description: Optional[str]) -> str:
+        """
+        Форматирование описания новости.
+
+        :return:
+        """
+        if description is None:
+            return "-"
+        return description
 
     async def _get_timezone(self) -> str:
         """
@@ -82,10 +126,10 @@ class Renderer:
 
         :return:
         """
-        dt = datetime.datetime.now() + datetime.timedelta(
+        render_time = datetime.datetime.now() + datetime.timedelta(
             seconds=self.location_info.weather.offset_seconds
         )
-        return dt.strftime("%X, %x")
+        return render_time.strftime("%X, %x")
 
     async def _format_visibility(self) -> str:
         """
@@ -121,8 +165,8 @@ class Renderer:
 
         if self.location_info.location.area is None:
             return "Нет информации о"
-        else:
-            return "{:,.0f}".format(self.location_info.location.area).replace(",", ".")
+
+        return "{:,.0f}".format(self.location_info.location.area).replace(",", ".")
 
     async def _format_population(self) -> str:
         """
