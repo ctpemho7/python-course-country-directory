@@ -80,7 +80,7 @@ class Renderer:
                         await self._format_description(news_entry.description), width=50
                     ),
                     fill(
-                        await self._format_publication_date(news_entry.publishedAt),
+                        await self._format_publication_date(news_entry.published_at),
                         width=10,
                     ),
                     fill(news_entry.url, width=50),

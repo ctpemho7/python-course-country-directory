@@ -89,7 +89,7 @@ def location_info_model_fixture() -> LocationInfoDTO:
                 description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                 "to bring them together?",
                 url="https://www.bbc.co.uk/news/uk-68211941",
-                publishedAt="2024-02-06T12:37:22Z",
+                published_at="2024-02-06T12:37:22Z",
             ),
             NewsInfoDTO(
                 author="BBC News",
@@ -97,7 +97,7 @@ def location_info_model_fixture() -> LocationInfoDTO:
                 description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                 "to bring them together?",
                 url="https://www.bbc.co.uk/news/uk-68211941",
-                publishedAt="2024-02-06T12:37:22Z",
+                published_at="2024-02-06T12:37:22Z",
             ),
             NewsInfoDTO(
                 author="BBC News",
@@ -105,7 +105,7 @@ def location_info_model_fixture() -> LocationInfoDTO:
                 description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                 "to bring them together?",
                 url="https://www.bbc.co.uk/news/uk-68211941",
-                publishedAt="2024-02-06T12:37:22Z",
+                published_at="2024-02-06T12:37:22Z",
             ),
         ],
     )

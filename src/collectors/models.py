@@ -186,7 +186,7 @@ class NewsInfoDTO(BaseModel):
             description="It's been a bleak midwinter for the Royal Family. Will the King's health news help to bring"
             "them together?",
             url="https://www.bbc.co.uk/news/uk-68211941",
-            publishedAt="2024-02-06T12:37:22Z",
+            published_at="2024-02-06T12:37:22Z",
         )
     """
 
@@ -194,7 +194,7 @@ class NewsInfoDTO(BaseModel):
     title: str
     description: Optional[str]
     url: str
-    publishedAt: str
+    published_at: str
 
 
 class LocationInfoDTO(BaseModel):
@@ -253,7 +253,7 @@ class LocationInfoDTO(BaseModel):
                     description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                     "to bring them together?",
                     url="https://www.bbc.co.uk/news/uk-68211941",
-                    publishedAt="2024-02-06T12:37:22Z",
+                    published_at="2024-02-06T12:37:22Z",
                 ),
                 NewsInfoDTO(
                     author="BBC News",
@@ -261,7 +261,7 @@ class LocationInfoDTO(BaseModel):
                     description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                     "to bring them together?",
                     url="https://www.bbc.co.uk/news/uk-68211941",
-                    publishedAt="2024-02-06T12:37:22Z",
+                    published_at="2024-02-06T12:37:22Z",
                 ),
                 NewsInfoDTO(
                     author="BBC News",
@@ -269,7 +269,7 @@ class LocationInfoDTO(BaseModel):
                     description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
                     "to bring them together?",
                     url="https://www.bbc.co.uk/news/uk-68211941",
-                    publishedAt="2024-02-06T12:37:22Z",
+                    published_at="2024-02-06T12:37:22Z",
                 ),
             ]
         )

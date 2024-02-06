@@ -294,7 +294,7 @@ class NewsCollector(BaseCollector):
                         title=item["title"],
                         description=item["description"],
                         url=item["url"],
-                        publishedAt=item["publishedAt"],
+                        published_at=item["publishedAt"],
                     )
                 )
             return result_list
