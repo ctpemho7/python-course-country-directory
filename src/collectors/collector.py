@@ -91,6 +91,8 @@ class CountryCollector(BaseCollector):
                 result_list.append(
                     CountryDTO(
                         capital=item["capital"],
+                        capital_latitude=item["latitude"],
+                        capital_longitude=item["longitude"],
                         alpha2code=item["alpha2code"],
                         alt_spellings=item["alt_spellings"],
                         currencies={

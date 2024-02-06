@@ -98,6 +98,8 @@ class CountryDTO(BaseModel):
     """
 
     capital: str
+    capital_latitude: float
+    capital_longitude: float
     alpha2code: str
     alt_spellings: list[str]
     currencies: set[CurrencyInfoDTO]
