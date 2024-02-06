@@ -17,7 +17,7 @@ class WeatherClient(BaseClient):
     """
 
     async def get_base_url(self) -> str:
-        return "https://api.openweathermap.org/data/2.5/weather"
+        return "https://api.openweathermap.org/data/2.5/weather?lang=ru"
 
     async def _request(self, endpoint: str) -> Optional[dict]:
 
@@ -37,5 +37,5 @@ class WeatherClient(BaseClient):
         """
 
         return await self._request(
-            f"{await self.get_base_url()}?units=metric&q={location}&appid={API_KEY_OPENWEATHER}"
+            f"{await self.get_base_url()}&units=metric&q={location}&appid={API_KEY_OPENWEATHER}"
         )

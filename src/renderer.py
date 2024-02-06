@@ -38,8 +38,24 @@ class Renderer:
             f"Языки: {await self._format_languages()}",
             f"Население страны: {await self._format_population()} чел.",
             f"Курсы валют: {await self._format_currency_rates()}",
-            f"Погода: {self.location_info.weather.temp} °C",
+            "-----------------погода в столице---------------------------",
+            f"Температура: {self.location_info.weather.temp} °C",
+            f"Погода: {self.location_info.weather.description}",
+            f"Влажность: {self.location_info.weather.humidity}%",
+            f"Видимость: {await self._format_visibility()} км",
+            f"Скорость ветра: {self.location_info.weather.wind_speed} м/с",
         )
+
+    async def _format_visibility(self) -> str:
+        """
+        Форматирование информации о видимости.
+        Необходимо преобразовать ответ из метров в километры.
+
+        :return:
+        """
+
+        # pylint: disable=C0209
+        return f"{self.location_info.weather.visibility / 1000}"
 
     async def _format_languages(self) -> str:
         """
