@@ -82,7 +82,8 @@ class CountryCollector(BaseCollector):
         """
         Чтение данных из кэша.
 
-        :return:
+        :return: None, если кэш пуст, list[CountryDTO] иначе
+
         """
 
         async with aiofiles.open(await cls.get_file_path(), mode="r") as file:
@@ -148,7 +149,7 @@ class CurrencyRatesCollector(BaseCollector):
         """
         Чтение данных из кэша.
 
-        :return:
+        :return: None, если кэш пуст, CurrencyRatesDTO иначе
         """
 
         async with aiofiles.open(await cls.get_file_path(), mode="r") as file:
@@ -210,8 +211,8 @@ class WeatherCollector(BaseCollector):
         """
         Чтение данных из кэша.
 
-        :param location:
-        :return:
+        :param location: Название локации
+        :return: None, если кэш пуст, WeatherInfoDTO иначе
         """
 
         filename = f"{location.capital}_{location.alpha2code}".lower()
@@ -275,8 +276,8 @@ class NewsCollector(BaseCollector):
         """
         Чтение данных из кэша.
 
-        :param location:
-        :return:
+        :param location: Название локации
+        :return: None, если кэш пуст, list[NewsInfoDTO] иначе
         """
 
         filename = f"{location.alpha2code}".lower()

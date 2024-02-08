@@ -33,7 +33,7 @@ class NewsClient(BaseClient):
         Получение данных о новостях.
 
         :param location: Двухбуквенный код страны по ISO 3166-1
-        :return:
+        :return: Ответ от API в формате dict
         """
 
         return await self._request(

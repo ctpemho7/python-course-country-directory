@@ -33,7 +33,7 @@ class WeatherClient(BaseClient):
         Получение данных о погоде.
 
         :param location: Город и страна
-        :return:
+        :return: Ответ от API в формате dict
         """
 
         return await self._request(
