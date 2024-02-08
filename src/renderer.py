@@ -95,6 +95,7 @@ class Renderer:
 
         :return:
         """
+        print(date)
         render_time = datetime.datetime.strptime(
             date, "%Y-%m-%dT%H:%M:%SZ"
         ) + datetime.timedelta(seconds=self.location_info.weather.offset_seconds)

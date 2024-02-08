@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "totalResults": 30,
+  "articles": [
+    {
+      "source": {
+        "id": "google-news",
+        "name": "Google News"
+      },
+      "author": "RMF 24",
+      "title": "Tragiczny po\u017car w Siemianowicach \u015al\u0105skich. Nie \u017cyje 4,5-letnie dziecko - RMF 24",
+      "description": null,
+      "url": "https://news.google.com/rss/articles/CBMicmh0dHBzOi8vd3d3LnJtZjI0LnBsL3JlZ2lvbnkvc2xhc2tpZS9uZXdzLXRyYWdpY3pueS1wb3phci13LXNpZW1pYW5vd2ljYWNoLXNsYXNraWNoLW5pZS16eWplLTQtNS1sZXRuaSxuSWQsNzMxMzI3OdIBdWh0dHBzOi8vd3d3LnJtZjI0LnBsL3JlZ2lvbnkvc2xhc2tpZS9uZXdzYW1wLXRyYWdpY3pueS1wb3phci13LXNpZW1pYW5vd2ljYWNoLXNsYXNraWNoLW5pZS16eWplLTQtNS1sZXRuaSxuSWQsNzMxMzI3OQ?oc=5",
+      "urlToImage": null,
+      "publishedAt": "2024-02-05T13:56:41Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "google-news",
+        "name": "Google News"
+      },
+      "author": "BusinessInsider",
+      "title": "W\u0119gry zag\u0142osuj\u0105 nad przyj\u0119ciem Szwecji do NATO. Wymowny gest Orbana - BusinessInsider",
+      "description": null,
+      "url": "https://news.google.com/rss/articles/CBMidGh0dHBzOi8vYnVzaW5lc3NpbnNpZGVyLmNvbS5wbC93aWFkb21vc2NpL3dlZ3J5LXphZ2xvc3VqYS1uYWQtcHJ6eWplY2llbS1zendlY2ppLWRvLW5hdG8td3ltb3dueS1nZXN0LW9yYmFuYS9nNHgzZXM40gEA?oc=5",
+      "urlToImage": null,
+      "publishedAt": "2024-02-05T13:48:29Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "google-news",
+        "name": "Google News"
+      },
+      "author": "Gazeta Pomorska",
+      "title": "Tabela wzrost\u00f3w emerytur od marca - Ministerstwo poda\u0142o dane! Mamy wyliczenia waloryzacji emerytur - Gazeta Pomorska",
+      "description": null,
+      "url": "https://news.google.com/rss/articles/CBMiggFodHRwczovL3BvbW9yc2thLnBsL3RhYmVsYS13enJvc3Rvdy1lbWVyeXR1ci1vZC1tYXJjYS1taW5pc3RlcnN0d28tcG9kYWxvLWRhbmUtbWFteS13eWxpY3plbmlhLXdhbG9yeXphY2ppLWVtZXJ5dHVyL2FyL2MxLTE4MjgyNzk30gEA?oc=5",
+      "urlToImage": null,
+      "publishedAt": "2024-02-05T13:43:15Z",
+      "content": null
+    }
+  ]
+}

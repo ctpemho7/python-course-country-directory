@@ -3,8 +3,8 @@
 """
 import pytest
 
-from clients.weather import WeatherClient
-from settings import API_KEY_OPENWEATHER
+from clients.news import NewsClient
+from settings import API_KEY_NEWSAPI
 
 
 @pytest.mark.asyncio
@@ -13,19 +13,19 @@ class TestCurrencyCountry:
     Тестирование клиента для получения информации о валюте.
     """
 
-    base_url = "https://api.openweathermap.org/data/2.5/weather"
+    base_url = "https://newsapi.org/v2/top-headlines"
 
     @pytest.fixture
     def client(self):
-        return WeatherClient()
+        return NewsClient()
 
     async def test_get_base_url(self, client):
         assert await client.get_base_url() == self.base_url
 
     async def test_get_rates(self, mocker, client):
-        mocker.patch("clients.weather.WeatherClient._request")
+        mocker.patch("clients.news.NewsClient._request")
 
-        await client.get_weather("test")
+        await client.get_news("test")
         client._request.assert_called_with(
-            f"{self.base_url}?lang=ru&units=metric&q=test&appid={API_KEY_OPENWEATHER}"
+            f"{self.base_url}?pageSize=3&country=test&apiKey={API_KEY_NEWSAPI}"
         )
