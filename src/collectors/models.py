@@ -83,6 +83,8 @@ class CountryDTO(BaseModel):
 
         CountryDTO(
             capital="Mariehamn",
+            capital_latitude=60.116667,
+            capital_longitude=19.9,
             alpha2code="AX",
             alt_spellings=[
               "AX",
@@ -156,8 +158,10 @@ class WeatherInfoDTO(BaseModel):
             temp=13.92,
             pressure=1023,
             humidity=54,
+            visibility=10_000,
             wind_speed=4.63,
             description="scattered clouds",
+            offset_seconds=3600,
         )
     """
 
@@ -177,12 +181,12 @@ class NewsInfoDTO(BaseModel):
     .. code-block::
 
         NewsInfoDTO(
-            "author"="BBC News",
-            "title"="What does the King's diagnosis mean for William, Harry and the other royals?",
-            "description"="It's been a bleak midwinter for the Royal Family. Will the King's health news help to bring
-                            them together?",
-            "url"="https://www.bbc.co.uk/news/uk-68211941",
-            "publishedAt"="2024-02-06T12:37:22.3818701Z",
+            author="BBC News",
+            title="What does the King's diagnosis mean for William, Harry and the other royals?",
+            description="It's been a bleak midwinter for the Royal Family. Will the King's health news help to bring"
+            "them together?",
+            url="https://www.bbc.co.uk/news/uk-68211941",
+            publishedAt="2024-02-06T12:37:22Z",
         )
     """
 
@@ -202,6 +206,8 @@ class LocationInfoDTO(BaseModel):
         LocationInfoDTO(
             location=CountryDTO(
                 capital="Mariehamn",
+                capital_latitude=60.116667,
+                capital_longitude=19.9,
                 alpha2code="AX",
                 alt_spellings=[
                   "AX",
@@ -232,12 +238,40 @@ class LocationInfoDTO(BaseModel):
                 temp=13.92,
                 pressure=1023,
                 humidity=54,
+                visibility=10_000,
                 wind_speed=4.63,
                 description="scattered clouds",
+                offset_seconds=3600,
             ),
             currency_rates={
                 "EUR": 0.016503,
             },
+            news = [
+                NewsInfoDTO(
+                    author="BBC News",
+                    title="What does the King's diagnosis mean for William, Harry and the other royals?",
+                    description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
+                    "to bring them together?",
+                    url="https://www.bbc.co.uk/news/uk-68211941",
+                    publishedAt="2024-02-06T12:37:22Z",
+                ),
+                NewsInfoDTO(
+                    author="BBC News",
+                    title="What does the King's diagnosis mean for William, Harry and the other royals?",
+                    description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
+                    "to bring them together?",
+                    url="https://www.bbc.co.uk/news/uk-68211941",
+                    publishedAt="2024-02-06T12:37:22Z",
+                ),
+                NewsInfoDTO(
+                    author="BBC News",
+                    title="What does the King's diagnosis mean for William, Harry and the other royals?",
+                    description="It's been a bleak midwinter for the Royal Family. Will the King's health news help"
+                    "to bring them together?",
+                    url="https://www.bbc.co.uk/news/uk-68211941",
+                    publishedAt="2024-02-06T12:37:22Z",
+                ),
+            ]
         )
     """
 
