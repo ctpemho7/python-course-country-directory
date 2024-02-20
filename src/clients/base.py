@@ -16,7 +16,7 @@ class BaseClient(ABC):
         """
         Получение базового URL для запросов.
 
-        :return:
+        :return: url в str-формате
         """
 
     @abstractmethod
@@ -24,6 +24,6 @@ class BaseClient(ABC):
         """
         Формирование и выполнение запроса.
 
-        :param endpoint:
-        :return:
+        :param endpoint: Зндпоинт, куда отправляется запрос
+        :return: ответ от API в формате dict
         """

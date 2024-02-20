@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": 21.0118,
+    "lat": 52.2298
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "\u043e\u0431\u043b\u0430\u0447\u043d\u043e \u0441 \u043f\u0440\u043e\u044f\u0441\u043d\u0435\u043d\u0438\u044f\u043c\u0438",
+      "icon": "04n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 8.38,
+    "feels_like": 4,
+    "temp_min": 7.58,
+    "temp_max": 9.32,
+    "pressure": 999,
+    "humidity": 80
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 10.29,
+    "deg": 250
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1707233940,
+  "sys": {
+    "type": 2,
+    "id": 2032856,
+    "country": "PL",
+    "sunrise": 1707199781,
+    "sunset": 1707233418
+  },
+  "timezone": 3600,
+  "id": 756135,
+  "name": "\u0412\u0430\u0440\u0448\u0430\u0432\u0430",
+  "cod": 200
+}

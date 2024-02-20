@@ -26,10 +26,21 @@ async def process_input(location: str) -> None:
 
     location_info = await Reader().find(location)
     if location_info:
-        lines = await Renderer(location_info).render()
+        country_tab, capital_tab, weather_tab, news_tab = await Renderer(
+            location_info
+        ).render()
 
-        for line in lines:
-            click.secho(line, fg="green")
+        click.secho("Информация о стране:")
+        click.secho(country_tab, fg="green")
+
+        click.secho("Последние новости:")
+        click.secho(news_tab, fg="blue")
+
+        click.secho("Информация о столице:")
+        click.secho(capital_tab, fg="green")
+
+        click.secho("Информация о погоде в столице:")
+        click.secho(weather_tab, fg="green")
     else:
         click.secho("Информация отсутствует.", fg="yellow")
 
